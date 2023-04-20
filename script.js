@@ -1,5 +1,4 @@
 function removeSpaceAndMakeLowerCase(str) {
-    console.log("removeSpaceAndMakeLowerCase Called");
     finalString = "";
     for (let i=0; i<str.length; i++) {
         if(str.charCodeAt(i) == 32) {
@@ -17,29 +16,20 @@ function removeSpaceAndMakeLowerCase(str) {
 }
 
 function showDivCorrespondingToButton(element) {
-    console.log("showDivCorrespondingToButton called");
-
     idOfDivToShow = "text-area-" + removeSpaceAndMakeLowerCase(element.textContent);
-    console.log(idOfDivToShow);
 
     divToShow = document.getElementById(idOfDivToShow);
     divToShow.style.display = "block";
 }
 
 function hideDivCorrespondingToButton(element) {
-    console.log("showDivCorrespondingToButton called");
+    idOfDivToHide = "text-area-" + removeSpaceAndMakeLowerCase(element.textContent);
 
-    idOfDivToShow = "text-area-" + removeSpaceAndMakeLowerCase(element.textContent);
-    console.log(idOfDivToShow);
-
-    divToShow = document.getElementById(idOfDivToShow);
+    divToShow = document.getElementById(idOfDivToHide);
     divToShow.style.display = "none";
 }
 
 function selectSection(i) {
-
-    console.log("selectSection called");
-
     // Fill clicked element with border style.
     i.srcElement.style.borderStyle = "solid";
     i.srcElement.style.borderWidth = "4px";
@@ -59,8 +49,6 @@ function selectSection(i) {
 
 console.log("SCRIPT STARTS");
 
-console.log(removeSpaceAndMakeLowerCase("Hello MY nAmE is Pranjal 1209****      "));
-
 //Getting the work experience button initially and highlight.
 var lastClickedElement = document.getElementById("work-experience-button");
 lastClickedElement.style.borderStyle = "solid";
@@ -77,8 +65,6 @@ var array = document.querySelectorAll(".button-36").forEach( (element) => {
 
 //Making all divs invisble:
 var textAreaArray = document.querySelectorAll('[id^="text-area"]').forEach( (element) => {
-    console.log("Text Area array");
-    console.log(element.textContent);
     element.style.display = "none";
 });
 
