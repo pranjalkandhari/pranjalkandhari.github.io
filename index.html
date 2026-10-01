@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pranjal Kandhari</title>
+    <script>
+        try {
+            if (localStorage.getItem("theme") === "light") {
+                document.documentElement.dataset.theme = "light";
+            }
+        } catch (error) {}
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,13 +18,15 @@
 <nav id="navbar">
     <div class="nav-container">
         <a href="#about" class="nav-name">Pranjal Kandhari</a>
-        <div class="nav-links">
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-        </div>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="3.5"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.5 8.5 0 1 0 20.2 15.3Z"></path>
+            </svg>
+        </button>
     </div>
 </nav>
 
@@ -34,11 +43,9 @@
                 <p class="position">M.Sc. Student in Computer and Information Science</p>
                 <p class="institution">University of Konstanz &middot; Algorithmics Group</p>
                 <div class="contact-links">
-                    <a href="mailto:pranjal.kandhari@uni-konstanz.de">pranjal.kandhari@uni-konstanz.de</a>
                     <a href="mailto:pranjalkandhari@gmail.com">pranjalkandhari@gmail.com</a>
                     <a href="https://www.linkedin.com/in/pranjal-kandhari-234168154/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/pranjalkandhari/" target="_blank">GitHub</a>
-                    <a href="Pranjal Kandhari Feb 2026.pdf" target="_blank">CV</a>
                 </div>
                 <p class="bio">
                     I am a master's student at the University of Konstanz specializing in Algorithmics,
@@ -51,6 +58,24 @@
         </div>
     </section>
 
+    <nav class="section-nav" aria-label="Portfolio sections">
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#academic-experience">Academic Experience</a>
+            <a href="#engineering-experience">Engineering Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+        </div>
+    </nav>
+
+    <button class="section-arrow section-arrow-prev" type="button" aria-label="Previous section" title="Previous section">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+    </button>
+    <button class="section-arrow section-arrow-next" type="button" aria-label="Next section" title="Next section">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </button>
+
     <!-- RESEARCH -->
     <section id="research">
         <h2 class="section-title">Research</h2>
@@ -58,11 +83,11 @@
         <div class="research-item">
             <div class="research-header">
                 <span class="research-tag thesis">Master's Thesis</span>
-                <span class="research-year">2024 &ndash; Present</span>
+                <span class="research-year">2025&ndash;26</span>
             </div>
             <h3>Algorithm Engineering for k-Center on Sparse Dynamic Graphs</h3>
             <p class="advisor">Advisor: Prof. Dr. Sabine Storandt &middot; University of Konstanz</p>
-            <p>Designed and implemented dynamic variants of k-center algorithms for node-update dynamic graphs,
+            <p>Designed and implemented dynamic variants of k-center algorithms in C++ for node-update dynamic graphs,
             extending classical static approaches to incremental, decremental, and fully dynamic models.</p>
         </div>
 
@@ -73,7 +98,7 @@
             </div>
             <h3>Approximation Algorithms for k-Center in Sparse Graphs</h3>
             <p class="advisor">Advisor: Prof. Dr. Sabine Storandt &middot; University of Konstanz</p>
-            <p>Implemented and experimentally evaluated the Maximal Distance-<em>r</em> Independent Set,
+            <p>Implemented in C++ and experimentally evaluated the Maximal Distance-<em>r</em> Independent Set,
             Gonzalez, and &alpha;-approximate Gonzalez algorithms across varied sparse graph instances.</p>
         </div>
 
@@ -104,95 +129,125 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
+    <!-- ACADEMIC EXPERIENCE -->
+    <section id="academic-experience">
+        <h2 class="section-title">Academic Experience</h2>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <h3>Department of Computer and Information Science, University of Konstanz</h3>
-                    <p class="exp-role">Student Research Assistant (HiWi)</p>
+        <p class="experience-note">The Algorithmics Group appointment spans both experience categories; responsibilities are grouped by focus.</p>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Department of Computer and Information Science, University of Konstanz</h3>
+                        <p class="exp-role">Research Assistant &mdash; Teaching</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Konstanz, Germany</span>
+                        <span>Apr 2025 &ndash; Present</span>
+                    </div>
                 </div>
-                <div class="exp-meta">
-                    <span>Konstanz, Germany</span>
-                    <span>Apr 2024 &ndash; Present</span>
-                </div>
+                <ul>
+                    <li>Teaching Assistant for <em>Algorithm Engineering</em>; graded assignments and provided feedback on parallelization, memory-aware algorithms, and parameterized complexity.</li>
+                </ul>
             </div>
-            <ul>
-                <li>Teaching Assistant for <em>Algorithm Engineering</em>; graded assignments on parallelization, memory-aware algorithms, and parameterized complexity.</li>
-                <li>Developing a web application to visualize routes in Konstanz for accessibility analysis; implemented 3D terrain rendering in R, integrated the Google Street View API, and applied preprocessing to optimize data handling and response time.</li>
-            </ul>
-        </div>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <h3>Max Planck Institute of Animal Behavior</h3>
-                    <p class="exp-role">Student Research Assistant (HiWi)</p>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Max Planck Institute of Animal Behavior</h3>
+                        <p class="exp-role">Research Assistant</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Konstanz, Germany</span>
+                        <span>Jan 2024 &ndash; Mar 2025</span>
+                    </div>
                 </div>
-                <div class="exp-meta">
-                    <span>Konstanz, Germany</span>
-                    <span>Jan 2024 &ndash; Mar 2024</span>
-                </div>
+                <ul>
+                    <li>Designed and implemented interactive behavioral-analysis games in Python to study collective human decision-making patterns.</li>
+                    <li>Built and deployed the game infrastructure on Heroku for hundreds of simultaneous online players, collecting interaction data for analysis.</li>
+                    <li>Programmed ChatGPT-powered agents and conducted comparative studies of human players, AI agents, and intra-AI interactions.</li>
+                    <li class="tech-stack"><strong>Tech:</strong> Python, LLM APIs</li>
+                </ul>
             </div>
-            <ul>
-                <li>Designed and implemented interactive behavioral analysis games using the oTree framework in Python to study human and AI decision-making patterns.</li>
-                <li>Deployed games on Heroku for hundreds of online players; programmed ChatGPT-powered agents for comparative studies between human players, AI agents, and intra-AI interactions.</li>
-            </ul>
-        </div>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <h3>IIIT Hyderabad &mdash; Precog Lab</h3>
-                    <p class="exp-role">Research Associate</p>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>IIIT Hyderabad &mdash; Precog Lab</h3>
+                        <p class="exp-role">Research Associate</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Hyderabad, India</span>
+                        <span>Feb 2023 &ndash; Jun 2023</span>
+                    </div>
                 </div>
-                <div class="exp-meta">
-                    <span>Hyderabad, India</span>
-                    <span>Feb 2023 &ndash; Jun 2023</span>
-                </div>
+                <ul>
+                    <li>Worked under Dr. Ponnurangam Kumaraguru at Precog Lab, using Cox regression, BERT topic modelling, and Reddit data from Pushshift and PRAW to analyze support duration and patterns in online COVID-19 communities.</li>
+                    <li>Built a time-series dataset of Indian crime statistics through large-scale web scraping with Scrapy, data extraction with Camelot, and data cleaning in Python.</li>
+                </ul>
             </div>
-            <ul>
-                <li>Worked under Dr. Ponnurangam Kumaraguru analyzing support dynamics in online COVID-19 communities using Cox regression, BERT topic modelling, and Reddit data extraction via Pushshift and PRAW.</li>
-                <li>Built a time-series dataset of Indian crime statistics through large-scale web scraping with Scrapy and data extraction with Camelot.</li>
-            </ul>
-        </div>
+    </section>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <h3>Amazon</h3>
-                    <p class="exp-role">Software Development Engineer I</p>
-                </div>
-                <div class="exp-meta">
-                    <span>Hyderabad, India</span>
-                    <span>Jul 2022 &ndash; Jan 2023</span>
-                </div>
-            </div>
-            <ul>
-                <li>Fixed ten anomalies in a newly created API to ensure backward compatibility with an existing API using Java.</li>
-                <li>Created availability and latency alarms and email notifications for critical endpoints using iGraph to monitor API health.</li>
-                <li>Developed a "Plan Document Comparator" feature by performing depth-first search on graph database schemas to compare plans and highlight anomalies.</li>
-            </ul>
-        </div>
+    <!-- ENGINEERING EXPERIENCE -->
+    <section id="engineering-experience">
+        <h2 class="section-title">Engineering Experience</h2>
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <h3>Goldman Sachs</h3>
-                    <p class="exp-role">Software Engineer &middot; Software Engineering Intern</p>
+        <p class="experience-note">The Algorithmics Group appointment spans both experience categories; responsibilities are grouped by focus.</p>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Department of Computer and Information Science, University of Konstanz</h3>
+                        <p class="exp-role">Research Assistant &mdash; Roubikon Engineering</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Konstanz, Germany</span>
+                        <span>Apr 2025 &ndash; Present</span>
+                    </div>
                 </div>
-                <div class="exp-meta">
-                    <span>Bangalore, India</span>
-                    <span>Aug 2021 &ndash; Jul 2022 &middot; May&ndash;Jun 2020</span>
-                </div>
+                <ul>
+                    <li>Built <strong>Roubikon</strong> (<a href="http://3.66.253.54:5000/" target="_blank">demo</a>, <a href="https://gitlab.opencode.de/oc000166979428/route_visualization_app" target="_blank">GitLab</a>), an AWS-deployed, multi-criteria route planner for users with mobility constraints. It computes paths over OpenStreetMap road graphs using user-weighted surface type, elevation, and distance objectives.</li>
+                    <li>Reduced nearest-neighbour snapping latency from 200 ms to 1.5 ms (&gt;100&times;) with a grid-based spatial index, and packaged graph extraction, indexing, and route planning as a pip-installable Python library that can set up a new city in under 10 minutes.</li>
+                    <li>Added synchronized street-level route-video rendering, GPX export, a mobile-responsive interface, and an LLM-based parser for converting free-text requests into routing parameters.</li>
+                    <li class="tech-stack"><strong>Tech:</strong> Flask, Python, JavaScript, Leaflet, AWS</li>
+                </ul>
             </div>
-            <ul>
-                <li>Automated 200+ quality management test scenarios for the Marcus product using Cypress (JavaScript) and Cucumber; configured GitLab CI/CD pipelines for test suite execution.</li>
-                <li>As intern: created automation tests using JUnit and Serenity BDD, parallelizing execution from minutes to seconds.</li>
-            </ul>
-        </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Amazon</h3>
+                        <p class="exp-role">Software Development Engineer I</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Hyderabad, India</span>
+                        <span>Jul 2022 &ndash; Jan 2023</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Built a Plan Document Comparator that introduced anomaly detection between plans, using depth-first search on graph database schemas to compare documents and highlight differences.</li>
+                    <li>Created availability and latency alarms and email notifications for critical endpoints using iGraph.</li>
+                    <li>Ensured backward compatibility between a new and an existing API in Java, enabling downstream consumers to migrate without service disruption.</li>
+                    <li class="tech-stack"><strong>Tech:</strong> Java</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div>
+                        <h3>Goldman Sachs</h3>
+                        <p class="exp-role">Software Engineer (converted from internship)</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span>Bangalore, India</span>
+                        <span>Aug 2021 &ndash; Jul 2022</span>
+                    </div>
+                </div>
+                <ul>
+                    <li>Configured GitLab CI/CD pipelines for test-suite execution.</li>
+                    <li>Developed test cases for evolving product features and Bash scripts that automated test-case table generation.</li>
+                    <li>Automated more than 200 quality-management scenarios for the Marcus product using Cypress and Cucumber.</li>
+                    <li class="tech-stack"><strong>Tech:</strong> JavaScript, Cypress, Java</li>
+                </ul>
+            </div>
     </section>
 
     <!-- PROJECTS -->
@@ -204,10 +259,19 @@
                 <h3>Feedback Vertex Set &mdash; Algorithm Engineering</h3>
                 <span class="project-grade">Grade: 1.0</span>
             </div>
-            <p>Implemented and analyzed exact (parameterized), approximation, and heuristic algorithms for the NP-complete
-            Feedback Vertex Set problem. Integrated parallelization techniques to improve scalability and experimentally
-            evaluated performance across multiple graph instances.</p>
-            <a href="https://github.com/pranjalkandhari/" target="_blank" class="project-link">GitHub &rarr;</a>
+            <p>Implemented and analyzed exact (parameterized), approximation, and heuristic algorithms in C++ for the NP-complete
+            Feedback Vertex Set problem. Parallelized the implementations with OpenMP and experimentally evaluated their
+            scalability across multiple graph instances.</p>
+            <a href="https://github.com/pranjalkandhari/algorithm_engineering/blob/main/ExamKandhari" target="_blank" class="project-link">GitHub &rarr;</a>
+        </div>
+
+        <div class="project-item">
+            <h3>Efficient Route Planning &mdash; Hierarchical Hub Labeling</h3>
+            <p>Implemented canonical, heuristic, and greedy Hierarchical Hub Labeling algorithms and skeleton-dimension
+            computation in C++. Validated shortest-path queries against Dijkstra on thousands of randomized tests and
+            evaluated the algorithms on PACE and road-network instances; heuristic HHL delivered the fastest normalized
+            query time, more than 100% faster than Dijkstra.</p>
+            <a href="https://gitlab.inf.uni-konstanz.de/pranjal.kandhari/efficient_route_planning" target="_blank" class="project-link">GitLab &rarr;</a>
         </div>
 
         <div class="project-item">
@@ -233,7 +297,8 @@
                     </p>
                     <p class="edu-courses">
                         <strong>Selected Coursework:</strong> Randomized Algorithms, Algorithm Engineering,
-                        Efficient Route Planning Techniques, Distributed Systems,
+                        Database System Architecture and Implementation, Approximation Algorithms,
+                        Efficient Route Planning Techniques, Distributed Systems, Introduction to Machine Learning,
                         Machine Learning and Optimization Seminar
                     </p>
                 </div>
@@ -265,7 +330,11 @@
         <div class="skills-grid">
             <div class="skills-block">
                 <h3>Programming</h3>
-                <p>C++ (STL, C++17/20), Python (NumPy, Pandas, Matplotlib), Java</p>
+                <p>Python, C++17/20, Java, JavaScript</p>
+            </div>
+            <div class="skills-block">
+                <h3>Frameworks &amp; Tools</h3>
+                <p>Flask, NumPy, Pandas, Matplotlib, STL, Leaflet, JUnit, Serenity BDD, Cucumber, Cypress, AWS, GitLab CI/CD, Bash, iGraph</p>
             </div>
             <div class="skills-block">
                 <h3>Research &amp; Algorithms</h3>
@@ -284,7 +353,7 @@
 
 <footer>
     <p>Pranjal Kandhari &middot; University of Konstanz &middot;
-    <a href="mailto:pranjal.kandhari@uni-konstanz.de">pranjal.kandhari@uni-konstanz.de</a></p>
+    <a href="mailto:pranjalkandhari@gmail.com">pranjalkandhari@gmail.com</a></p>
 </footer>
 
 <script src="script.js"></script>
